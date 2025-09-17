@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Sky Social Agency</title>
+    <link href="sm.jpeg">
+    <link rel="stylesheet" href="IG_ BydvnielleJ.jpeg">
+    <style>
+        :root {
+            --primary: #4a6cf7;
+            --secondary: #ff6b00;
+            --accent: #00d2a0;
+            --dark: #1d2130;
+            --light: #f7f9fc;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s;
+            border-radius: 3px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(74, 108, 247, 0.3);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 108, 247, 0.4);
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--light) 0%, #e8ecfb 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--dark);
+        }
+        
+        /* About Sections */
+        .about-section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 30px auto 0;
+            color: #666;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .about-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-image-placeholder:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23ffffff" opacity="0.2" d="M50,0 L100,50 L50,100 L0,50 Z"/></svg>');
+            background-size: 200px;
+        }
+        
+        /* Image Banner */
+        .image-banner {
+            width: 100%;
+            height: 400px;
+            margin: 60px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .image-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-banner:hover img {
+            transform: scale(1.05);
+        }
+        
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(74, 108, 247, 0.7), rgba(255, 107, 0, 0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .image-banner:hover .banner-overlay {
+            opacity: 1;
+        }
+        
+        .banner-text {
+            max-width: 600px;
+            padding: 0 20px;
+        }
+        
+        .banner-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .banner-text p {
+            font-size: 1.2rem;
+        }
+        
+        /* Values Section */
+        .values {
+            background: linear-gradient(135deg, var(--light) 0%, #e8ecfb 100%);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .value-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            text-align: center;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .value-card i {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .value-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .value-card p {
+            color: #666;
+        }
+        
+        /* Team Section */
+        .team {
+            background-color: var(--white);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-member-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-member-image:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23ffffff" opacity="0.2" d="M50,0 C77.614,0 100,22.386 100,50 C100,77.614 77.614,100 50,100 C22.386,100 0,77.614 0,50 C0,22.386 22.386,0 50,0 Z"/></svg>');
+            background-size: 100px;
+        }
+        
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .team-member .role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+		
+		.team-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+       }
+        
+        .team-member p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light);
+            color: var(--dark);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23ffffff" opacity="0.1" d="M50,0 C77.614,0 100,22.386 100,50 C100,77.614 77.614,100 50,100 C22.386,100 0,77.614 0,50 C0,22.386 22.386,0 50,0 Z"/></svg>');
+            background-size: 150px;
+        }
+        
+        .stats-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background-color: var(--white);
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(74, 108, 247, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-col p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+            opacity: 0.8;
+        }
+        
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .newsletter-form button {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            opacity: 0.9;
+        }
+        
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .footer-social-links a:hover {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-top: 40px;
+            }
+            
+            .image-banner {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 15px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .page-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .values-grid, .team-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .image-banner {
+                height: 250px;
+            }
+            
+            .banner-text h3 {
+                font-size: 1.8rem;
+            }
+            
+            .banner-text p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span>SKY SOCIAL AGENCY</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="rdv.html" class="nav-btn">Prendre RDV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h1>À propos de Sky Social Agency</h1>
+            <p>Plus qu'une agence, un partenaire de confiance pour votre stratégie sociale</p>
+        </div>
+    </section>
+
+    <!-- Notre Histoire -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre Histoire</h2>
+                <p>Découvrez comment tout a commencé et notre vision pour l'avenir</p>
+            </div>
+            
+            <!-- Nouvelle bannière image ajoutée ici -->
+            <div class="image-banner fade-in">
+                <img src="sm.jpeg" alt="Équipe Sky Social Agency en réunion">
+                <div class="banner-overlay">
+                    <div class="banner-text">
+                        <h3>Notre équipe passionnée</h3>
+                        <p>Des experts dévoués à votre réussite sociale</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-content">
+              <div class="about-text">
+                <h3>Notre parcours</h3>
+                    <p>Fondée en 2024, Sky Social Agency est née d'un constat simple : nombreuses sont les entreprises qui peinent à tirer profit du potentiel des réseaux sociaux par manque de temps, d'expertise ou de ressources.</p>
+                    <p>Notre mission est simple : offrir à chaque marque une présence sociale authentique et impactante qui génère des résultats concrets.</p>
+                  <p>Aujourd'hui, nous accompagnons plus de 50 clients dans divers secteurs d'activité, de la protésiste ongulaire&nbsp; &nbsp;à la startup innovante.&nbsp; &nbsp;</p>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-placeholder"></div>
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-placeholder"></div>
+                </div>
+                <div class="about-text">
+                    <h3>Notre vision</h3>
+                    <p>Chez Sky Social Agency, nous croyons que chaque marque mérite une présence sociale qui reflète ses valeurs et engage sa communauté de manière authentique.</p>
+                    <p>Nous visons à démocratiser l'accès à des stratégies sociales performantes, en mettant notre expertise au service de votre croissance.</p>
+                    <p>Notre approche combine créativité, stratégie et analyse data pour vous offrir des résultats mesurables et un retour sur investissement concret.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Valeurs -->
+    <section class="about-section values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Valeurs</h2>
+                <p>Les principes qui guident chacune de nos actions et interactions</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <i class="fas fa-eye"></i>
+                    <h3>Transparence</h3>
+                    <p>Nous établissons des relations de confiance avec nos clients grâce à une communication honnête et transparente à chaque étape du processus.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <i class="fas fa-palette"></i>
+                    <h3>Créativité</h3>
+                    <p>Nous repoussons les limites pour créer des campagnes uniques qui marquent les esprits et différencient votre marque.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <i class="fas fa-star"></i>
+                    <h3>Excellence</h3>
+                    <p>Nous visons l'excellence dans chaque détail, de la stratégie à l'exécution, pour vous offrir un service de qualité supérieure.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Engagement</h3>
+                    <p>Nous nous engageons pleinement dans la réussite de vos objectifs comme s'il s'agissait des nôtres, avec dévouement et passion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Équipe -->
+    <section class="about-section team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre Équipe</h2>
+                <p>Des experts passionnés à votre service</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="team-member-image">
+    <!-- Remplacer par votre photo -->
+    <img src="meryne.png" alt="Meryne Ndjeyi">
+</div>
+                    </div>
+                    <h3>Meryne Ndjeyi</h3>
+                    <div class="role">CEO & Directrice Artistique</div>
+                    <p>Créative et passionnée par la communication digitale, je suis spécialisée en stratégie réseaux sociaux, campagnes publicitaires et web design.
+Avec une vision claire et un vrai sens du détail, j’aide les marques à construire une présence en ligne cohérente, percutante et alignée avec leurs valeurs.</p>
+               
+                </div>
+                <div class="team-member fade-in">
+                    <div class="team-member-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Giovanni Affogbolo</h3>
+                    <div class="role">RDéveloppeur Website</div>
+                    <p>Spécialisé en création de sites performants et modernes, j’accompagne Sky Social dans la réalisation des sites web clients.
+En binôme avec Meryne (web design), je développe des plateformes esthétiques, ergonomiques et optimisées.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="team-member-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Donia Chaïr</h3>
+                    <div class="role">Community manager</div>
+                    <p>Experte en contenu visuel et storytelling, je donne vie à votre univers de marque à travers des visuels authentiques, modernes et pensés pour engager.
+Je m’occupe de la gestion visuelle de vos réseaux et de la production de contenu adapté à votre audience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Statistiques -->
+    <section class="stats">
+        <div class="container stats-content">
+            <div class="section-title">
+                <h2>Notre Impact</h2>
+                <p>Des résultats concrets pour nos clients</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Clients Satisfaits</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Ans d'Expertise</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Experts Dédiés</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="section-title">
+                <h2>Prêt à collaborer ?</h2>
+                <p>Rencontrons-nous pour discuter de votre projet</p>
+            </div>
+            <a href="contact.html" class="btn">Contactez-nous</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sky Social Agency</h3>
+                    <p>Stratégies sociales sur-mesure pour propulser votre marque</p>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/meryne.eis/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="www.linkedin.com/in/meryne-ndjeyi-bb5169198" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Inscrivez-vous à notre newsletter pour recevoir nos conseils et actualités</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email">
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Sky Social Agency - Tous droits réservés | Mentions légales | Politique de confidentialité</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Simple form validation
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if(newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Merci de vous être abonné à notre newsletter !');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>

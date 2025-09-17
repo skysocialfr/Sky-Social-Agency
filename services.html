@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - Sky Social Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wdth,wght@75,200;75,300;75,400;75,500;75,600;75,700;75,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a6cf7;
+            --secondary: #ff6b00;
+            --accent: #00d2a0;
+            --dark: #1d2130;
+            --light: #f7f9fc;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s;
+            border-radius: 3px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(74, 108, 247, 0.3);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 108, 247, 0.4);
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--light) 0%, #e8ecfb 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--dark);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 30px auto 0;
+            color: #666;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            transition: height 0.4s;
+            z-index: -1;
+            opacity: 0.05;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .service-card:hover:before {
+            height: 100%;
+        }
+        
+        .service-card i {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            margin-top: 20px;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li i {
+            font-size: 1rem;
+            margin-right: 10px;
+            color: var(--accent);
+            background: none;
+            -webkit-text-fill-color: var(--accent);
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--light) 0%, #e8ecfb 100%);
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 1;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .step-description {
+            color: #666;
+            padding: 0 15px;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .pricing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .pricing-card.popular {
+            border: 3px solid var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.popular:before {
+            content: 'Populaire';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 5px 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #666;
+            display: block;
+            font-weight: 400;
+        }
+        
+        .pricing-features {
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-features li i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23ffffff" opacity="0.1" d="M50,0 C77.614,0 100,22.386 100,50 C100,77.614 77.614,100 50,100 C22.386,100 0,77.614 0,50 C0,22.386 22.386,0 50,0 Z"/></svg>');
+            background-size: 150px;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary);
+            padding: 16px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-col p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+            opacity: 0.8;
+        }
+        
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .newsletter-form button {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 15px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .page-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .services-grid, .pricing-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span>SKY SOCIAL AGENCY</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="rdv.html" class="nav-btn">Prendre RDV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h1>Nos Services</h1>
+            <p>Des solutions adaptées à vos objectifs pour une présence sociale remarquable</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Offres de Services</h2>
+                <p>Chez Sky Social Agency, nous proposons un accompagnement sur-mesure adapté à vos besoins et objectifs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Stratégie de médias sociaux</h3>
+                    <p>Développement d'une feuille de route complète pour maximiser votre présence sociale et atteindre vos objectifs business.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Audit complet de votre présence actuelle</li>
+                        <li><i class="fas fa-check"></i> Définition d'objectifs SMART et d'une ligne éditoriale</li>
+                        <li><i class="fas fa-check"></i> Planification détaillée du contenu et calendrier éditorial</li>
+                        <li><i class="fas fa-check"></i> Mise en œuvre et optimisation continue</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Création de contenu</h3>
+                    <p>Production de contenus engageants et de qualité qui reflètent l'identité de votre marque.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Photographie professionnelle</li>
+                        <li><i class="fas fa-check"></i> Production vidéo (reels, tutos, témoignages)</li>
+                        <li><i class="fas fa-check"></i> Motion design et animations</li>
+                        <li><i class="fas fa-check"></i> Design graphique pour posts et stories</li>
+                        <li><i class="fas fa-check"></i> Création de maquettes pour campagnes</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Management</h3>
+                    <p>Gestion au quotidien de vos communautés pour créer des relations authentiques avec votre audience.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Modération des commentaires et messages</li>
+                        <li><i class="fas fa-check"></i> Réponse personnalisée à votre audience</li>
+                        <li><i class="fas fa-check"></i> Animation de conversations</li>
+                        <li><i class="fas fa-check"></i> Développement d'une communauté engagée</li>
+                        <li><i class="fas fa-check"></i> Veille sectorielle</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-ad"></i>
+                    <h3>Publicités sur réseaux sociaux</h3>
+                    <p>Gestion de campagnes performantes pour maximiser votre retour sur investissement.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Analyse de la cible et définition des personas</li>
+                        <li><i class="fas fa-check"></i> Création de campagnes A/B testées</li>
+                        <li><i class="fas fa-check"></i> Optimisation des publicités en temps réel</li>
+                        <li><i class="fas fa-check"></i> Suivi du ROI et analyse des performances</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Analyse et reporting</h3>
+                    <p>Suivi précis des performances et recommandations d'optimisation basées sur les données.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Tableaux de bord personnalisés</li>
+                        <li><i class="fas fa-check"></i> Analyses détaillées des performances</li>
+                        <li><i class="fas fa-check"></i> Recommandations stratégiques</li>
+                        <li><i class="fas fa-check"></i> Reporting régulier et transparent</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Formation et conseil</h3>
+                    <p>Pour une autonomie digitale de vos équipes et un développement durable de votre présence sociale.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Formations personnalisées à vos équipes</li>
+                        <li><i class="fas fa-check"></i> Ateliers de création de contenu</li>
+                        <li><i class="fas fa-check"></i> Conseils stratégiques ponctuels</li>
+                        <li><i class="fas fa-check"></i> Audit one-shot de vos réseaux sociaux</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre Processus en 4 Étapes</h2>
+                <p>Une méthodologie éprouvée pour des résultats tangibles</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Audit [&] Analyse</h3>
+                    <p class="step-description">Nous analysons votre présence actuelle et identifions les opportunités d'amélioration.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Stratégie [&] Planification</h3>
+                    <p class="step-description">Nous développons une stratégie sur-mesure avec des objectifs clairs et un calendrier détaillé.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Mise en Œuvre</h3>
+                    <p class="step-description">Nous exécutons votre stratégie avec créativité et précision.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Optimisation</h3>
+                    <p class="step-description">Nous analysons les performances et ajustons continuellement pour maximiser les résultats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Formules</h2>
+                <p>Des offres adaptées à chaque besoin et budget</p>
+            </div>
+            <div class="pricing-options">
+                <div class="pricing-card fade-in">
+                    <h3>Forfait Essentiel</h3>
+                    <div class="price">À partir de 490€<span>/mois</span></div>
+                    <p>Idéal pour les débutants ou les petites entreprises</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Gestion de 2 plateformes sociales</li>
+                        <li><i class="fas fa-check"></i> 5 posts par semaine par plateforme</li>
+                        <li><i class="fas fa-check"></i> Reporting mensuel</li>
+                        <li><i class="fas fa-check"></i> Community management basique</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Choisir cette offre</a>
+                </div>
+                <div class="pricing-card popular fade-in">
+                    <h3>Forfait Pro</h3>
+                    <div class="price">À partir de 790€<span>/mois</span></div>
+                    <p>Notre offre la plus populaire pour les entreprises en croissance</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Gestion de 3 plateformes sociales</li>
+                        <li><i class="fas fa-check"></i> 8 posts par semaine par plateforme</li>
+                        <li><i class="fas fa-check"></i> Stories quotidiennes</li>
+                        <li><i class="fas fa-check"></i> Community management complet</li>
+                        <li><i class="fas fa-check"></i> Campagnes publicitaires simples</li>
+                        <li><i class="fas fa-check"></i> Reporting hebdomadaire</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Choisir cette offre</a>
+                </div>
+                <div class="pricing-card fade-in">
+                    <h3>Forfait Enterprise</h3>
+                    <div class="price">Sur devis<span>personnalisé</span></div>
+                    <p>Solution sur-mesure pour les grandes entreprises et marques</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Gestion de 4+ plateformes sociales</li>
+                        <li><i class="fas fa-check"></i> Stratégie content avancée</li>
+                        <li><i class="fas fa-check"></i> Création de contenu premium</li>
+                        <li><i class="fas fa-check"></i> Campagnes publicitaires avancées</li>
+                        <li><i class="fas fa-check"></i> Community management 7j/7</li>
+                        <li><i class="fas fa-check"></i> Reporting détaillé et réunions stratégiques</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Choisir cette offre</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container cta-content">
+            <h2>Prêt à transformer votre présence sociale ?</h2>
+            <p>Contactez-nous dès aujourd'hui pour une analyse gratuite de vos réseaux sociaux et une proposition sur-mesure.</p>
+            <a href="contact.html" class="btn">Nous contacter</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sky Social Agency</h3>
+                    <p>Stratégies sociales sur-mesure pour propulser votre marque</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Stratégie sociale</a></li>
+                        <li><a href="services.html">Création de contenu</a></li>
+                        <li><a href="services.html">Community Management</a></li>
+                        <li><a href="services.html">Publicités sociales</a></li>
+                        <li><a href="services.html">Analyse et reporting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Inscrivez-vous à notre newsletter pour recevoir nos conseils et actualités</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email">
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Sky Social Agency - Tous droits réservés | Mentions légales | Politique de confidentialité</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Simple form validation
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if(newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Merci de vous être abonné à notre newsletter !');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
