@@ -535,6 +535,8 @@
             justify-content: center;
             color: var(--white);
             font-size: 3rem;
+			object-fit: cover;
+    transition: transform 0.5s ease;
         }
         
         .portfolio-overlay {
@@ -552,6 +554,9 @@
         .portfolio-item:hover .portfolio-overlay {
             transform: translateY(0);
         }
+		.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.1);
+}
         
         .portfolio-overlay h3 {
             margin-bottom: 10px;
@@ -816,6 +821,55 @@
                 font-size: 2.2rem;
             }
         }
+		/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .services-grid, .testimonials-grid, .portfolio-grid, .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-title h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Styles responsive pour les images about */
+@media (max-width: 768px) {
+    .about-image-placeholder img,
+    .about-image-container img {
+        height: 300px;
+    }
+    
+    .about-image-container {
+        margin-top: 30px;
+    }
+}
     </style>
 </head>
 <body>
@@ -858,56 +912,62 @@
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <i class="fas fa-chart-line"></i>
-                    <h3>Stratégie de médias sociaux</h3>
-                    <p>Développement d'une feuille de route complète pour maximiser votre présence sociale et atteindre vos objectifs business.</p>
+                    <h3>Community Management&nbsp;</h3>
+                    <p>Déléguez, on s’occupe de tout. Nous assurons la gestion complète ou partielle de vos réseaux sociaux , avec une stratégie adaptée à votre marque, vos objectifs et votre audience.</p>
                     <a href="services.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                </div>
+              </div>
                 <div class="service-card fade-in">
                     <i class="fas fa-paint-brush"></i>
                     <h3>Création de contenu</h3>
-                    <p>Production de contenus engageants et de qualité (photos, vidéos, designs) qui reflètent l'identité de votre marque.</p>
+                    <p>Un bon visuel vaut mille mots. Nous créons des contenus captivants, originaux et alignés avec votre identité visuelle, pour booster votre engagement et valoriser vos produits ou services.</p>
                     <a href="services.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card fade-in">
                     <i class="fas fa-users"></i>
-                    <h3>Community Management</h3>
-                    <p>Gestion au quotidien de vos communautés pour créer des relations authentiques avec votre audience.</p>
+                    <h3>Développement Web</h3>
+                    <p>En collaboration avec notre développeur, nous concevons des sites modernes, épurés et responsive (qui s’adaptent au mobile), optimisés pour les conversions.</p>
                     <a href="services.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+ 
     <!-- About Preview -->
-    <section class="about-preview">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Sky Social Agency</h2>
-                    <p>Fondée en 2020, Sky Social Agency est née d'un constat simple : nombreuses sont les entreprises qui peinent à tirer profit du potentiel des réseaux sociaux par manque de temps, d'expertise ou de ressources.</p>
-                    <p>Notre mission est simple : offrir à chaque marque une présence sociale authentique et impactante qui génère des résultats concrets.</p>
-                    <a href="about.html" class="btn"><span>En savoir plus sur nous</span></a>
-                </div>
-                <div class="about-image">
-                    <div class="about-image-placeholder"></div>
-                </div>
+<section class="about-preview">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Une stratégie claire et une image forte</h2>
+                <p>Bienvenue chez Sky Social, l'agence où stratégie et créativité ne font qu'un. Derrière chaque post, chaque campagne et chaque visuel, il y a une équipe passionnée qui croit au pouvoir des marques audacieuses.</p>
+                <p>Nous accompagnons les entrepreneuses, créateurs et marques ambitieuses à se faire une vraie place sur le digital — avec authenticité, cohérence et impact. Parce que votre image mérite bien plus qu'un simple feed : elle mérite une vraie stratégie, une vision claire, et une touche de magie ✨</p>
+                <a href="about.html" class="btn"><span>En savoir plus sur nous</span></a>
             </div>
-            <div class="stats-grid">
-                <div class="stat-item fade-in">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Clients satisfaits</div>
-                </div>
-                <div class="stat-item fade-in">
-                    <div class="stat-number">150%</div>
-                    <div class="stat-label">Croissance moyenne</div>
-                </div>
-                <div class="stat-item fade-in">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Ans d'expertise</div>
-                </div>
+            <div class="about-image">
+                <div class="about-image">
+    <div class="about-image-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+        <img src="stratmedia.jpeg" alt="Stratégie média et création de contenu" style="width:100%; height:400px; object-fit: cover;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(74, 108, 247, 0.1), rgba(255, 107, 0, 0.1));"></div>
+    </div>
+</div>
             </div>
         </div>
-    </section>
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Clients satisfaits</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number">150%</div>
+                <div class="stat-label">Croissance moyenne</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Ans d'expertise</div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Testimonials -->
     <section class="testimonials">
@@ -919,12 +979,12 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
                     <div class="testimonial-content">
-                        <p class="testimonial-text">"Sky Social Agency a révolutionné notre présence sur les réseaux sociaux. Notre engagement a augmenté de 150% en seulement 3 mois."</p>
+                        <p class="testimonial-text">"Sky Social Agency&nbsp; nous a fait un site web&nbsp; magnifique pour son prix, Meryne a bien veillée à respecter nous charte graphique et vison. Merci beaucoup !&nbsp; &nbsp;"</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">SM</div>
+                          <div class="author-avatar">SM</div>
                             <div class="author-details">
-                                <h4>Sophie Martin</h4>
-                                <p>Directrice Marketing</p>
+                                <h4>EPANA</h4>
+                                <p>Brand Owner</p>
                             </div>
                         </div>
                     </div>
@@ -935,8 +995,8 @@
                         <div class="testimonial-author">
                             <div class="author-avatar">TL</div>
                             <div class="author-details">
-                                <h4>Thomas Leroy</h4>
-                                <p>Fondateur de BelleMaison</p>
+                                <h4>Anaïs Millon-Devigne</h4>
+                                <p>Sophrologue</p>
                             </div>
                         </div>
                     </div>
@@ -955,29 +1015,29 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image">
-                        <i class="fas fa-home"></i>
+                        <img src="sitesphro.png" alt="Confection site web" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3>Belle Maison</h3>
-                        <p>E-commerce décoration - +200% de trafic et +85% de ventes via Instagram</p>
+                        <h3>Confection site web</h3>
+                        <p>Confection d'un site web pour un cabinet de sophrologie</p>
                     </div>
                 </div>
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image">
-                        <i class="fas fa-coffee"></i>
+						<img src="montage.png" alt="Création de contenu" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3>L'Artisan Café</h3>
-                        <p>Café boutique - +150% d'engagement et augmentation notable de la clientèle locale</p>
+                        <h3>Création de contenu</h3>
+                        <p>Production de visuels engageants pour réseaux sociaux</p>
                     </div>
                 </div>
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-image">
-                        <i class="fas fa-laptop"></i>
+                        <img src="creationcontenu.png" alt="Campagne Publicitaire" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3>Technovation</h3>
-                        <p>Startup tech - +300% de candidatures spontanées et amélioration du branding employeur</p>
+                        <h3>Campagne Publicitaire</h3>
+                        <p>Stratégie axée sur la promotion pour attirer de nouveaux clients</p>
                     </div>
                 </div>
             </div>

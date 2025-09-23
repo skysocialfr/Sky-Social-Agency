@@ -335,92 +335,152 @@
             color: #666;
         }
         
-        /* Team Section */
-        .team {
-            background-color: var(--white);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-        
-        .team-member {
-            text-align: center;
-        }
-        
-        .team-member-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .team-member-image:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="%23ffffff" opacity="0.2" d="M50,0 C77.614,0 100,22.386 100,50 C100,77.614 77.614,100 50,100 C22.386,100 0,77.614 0,50 C0,22.386 22.386,0 50,0 Z"/></svg>');
-            background-size: 100px;
-        }
-        
-        .team-member h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-        
-        .team-member .role {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-		
-		.team-member-image img {
+/* Team Section */
+.team {
+    background-color: var(--white);
+    padding: 100px 0;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    background: var(--light);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 4px solid var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    color: var(--dark);
+}
+
+.team-member .role {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.team-member p {
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-       }
-        
-        .team-member p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--light);
-            color: var(--dark);
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: var(--white);
-            transform: translateY(-3px);
-        }
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--white);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-links a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.social-links a:hover:after {
+    opacity: 1;
+}
+
+.social-links a i {
+    position: relative;
+    z-index: 1;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover i {
+    transform: rotate(360deg);
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(74, 108, 247, 0.4);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-member {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-member {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
         
         /* Stats Section */
         .stats {
@@ -789,55 +849,58 @@
         </div>
     </section>
 
-    <!-- Notre Équipe -->
-    <section class="about-section team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Notre Équipe</h2>
-                <p>Des experts passionnés à votre service</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-member fade-in">
-                    <div class="team-member-image">
-    <!-- Remplacer par votre photo -->
-    <img src="meryne.png" alt="Meryne Ndjeyi">
-</div>
-                    </div>
-                    <h3>Meryne Ndjeyi</h3>
-                    <div class="role">CEO & Directrice Artistique</div>
-                    <p>Créative et passionnée par la communication digitale, je suis spécialisée en stratégie réseaux sociaux, campagnes publicitaires et web design.
-Avec une vision claire et un vrai sens du détail, j’aide les marques à construire une présence en ligne cohérente, percutante et alignée avec leurs valeurs.</p>
+  <!-- Notre Équipe -->
+<section class="about-section team">
+    <div class="container">
+        <div class="section-title">
+            <h2>Notre Équipe</h2>
+            <p>Des experts passionnés à votre service</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-member fade-in">
+                <div class="team-member-image">
+                    <img src="meryne.png" alt="Meryne Ndjeyi">
                 </div>
-                <div class="team-member fade-in">
-                    <div class="team-member-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>Giovanni Affogbolo</h3>
-                    <div class="role">RDéveloppeur Website</div>
-                    <p>Spécialisé en création de sites performants et modernes, j’accompagne Sky Social dans la réalisation des sites web clients.
-En binôme avec Meryne (web design), je développe des plateformes esthétiques, ergonomiques et optimisées.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="team-member fade-in">
-                    <div class="team-member-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>Donia Chaïr</h3>
-                    <div class="role">Community manager</div>
-                    <p>Experte en contenu visuel et storytelling, je donne vie à votre univers de marque à travers des visuels authentiques, modernes et pensés pour engager.
-Je m’occupe de la gestion visuelle de vos réseaux et de la production de contenu adapté à votre audience.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
+                <h3>Meryne Ndjeyi</h3>
+                <div class="role">CEO & Directrice Artistique</div>
+                <p>Créative et passionnée par la communication digitale, je suis spécialisée en stratégie réseaux sociaux, campagnes publicitaires et web design. Avec une vision claire et un vrai sens du détail, j'aide les marques à construire une présence en ligne cohérente, percutante et alignée avec leurs valeurs.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/meryne.eis/"><i class="fab fa-instagram"></i></a>
+                    <a href="www.linkedin.com/in/meryne-ndjeyi-bb5169198"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-    </section>
+            
+            <div class="team-member fade-in">
+                <div class="team-member-image">
+                    <img src="giovanni.png" alt="Giovanni Affogbolo">
+                </div>
+                <h3>Giovanni Affogbolo</h3>
+                <div class="role">Développeur Website</div>
+                <p>Spécialisé en création de sites performants et modernes, j'accompagne Sky Social dans la réalisation des sites web clients. En binôme avec Meryne (web design), je développe des plateformes esthétiques, ergonomiques et optimisées.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member fade-in">
+                <div class="team-member-image">
+                    <img src="donia.png" alt="Donia Chaïr">
+                </div>
+                <h3>Donia Chaïr</h3>
+                <div class="role">Community manager</div>
+                <p>Experte en contenu visuel et storytelling, je donne vie à votre univers de marque à travers des visuels authentiques, modernes et pensés pour engager. Je m'occupe de la gestion visuelle de vos réseaux et de la production de contenu adapté à votre audience.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Statistiques -->
     <section class="stats">
@@ -848,7 +911,7 @@ Je m’occupe de la gestion visuelle de vos réseaux et de la production de cont
             </div>
             <div class="stats-grid">
                 <div class="stat-item fade-in">
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number">15+</div>
                     <div class="stat-label">Clients Satisfaits</div>
                 </div>
                 <div class="stat-item fade-in">
