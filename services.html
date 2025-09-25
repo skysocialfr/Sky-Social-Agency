@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -366,84 +367,109 @@ img {
             padding: 0 15px;
         }
         
-        /* Pricing Section */
-        .pricing {
+        /* Custom Solution Section */
+        .custom-solution {
             padding: 100px 0;
             background-color: var(--white);
-        }
-        
-        .pricing-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-        
-        .pricing-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
             text-align: center;
         }
         
-        .pricing-card.popular {
-            border: 3px solid var(--primary);
-            transform: scale(1.05);
+        .custom-content {
+            max-width: 900px;
+            margin: 0 auto;
         }
         
-        .pricing-card.popular:before {
-            content: 'Populaire';
-            position: absolute;
-            top: 15px;
-            right: -30px;
-            background: var(--primary);
-            color: var(--white);
-            padding: 5px 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transform: rotate(45deg);
-        }
-        
-        .pricing-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
+        .custom-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
             color: var(--dark);
         }
         
-        .price {
+        .custom-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature-item {
+            background: var(--light);
+            padding: 30px 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-item i {
             font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
-        .price span {
-            font-size: 1rem;
-            color: #666;
-            display: block;
-            font-weight: 400;
-        }
-        
-        .pricing-features {
-            margin: 30px 0;
-            text-align: left;
-        }
-        
-        .pricing-features li {
+        .feature-item h3 {
+            font-size: 1.4rem;
             margin-bottom: 10px;
-            display: flex;
-            align-items: center;
+            color: var(--dark);
         }
         
-        .pricing-features li i {
-            margin-right: 10px;
-            color: var(--accent);
+        .feature-item p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .custom-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 60px 40px;
+            border-radius: 15px;
+            color: var(--white);
+            margin-top: 60px;
+        }
+        
+      .custom-cta h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--white); /* Ajout pour plus de contraste */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Ombre portée pour mieux détacher le texte */
+}
+
+.custom-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.95; /* Augmentation de l'opacité */
+    color: var(--white); /* Couleur blanche pour plus de contraste */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Légère ombre */
+    font-weight: 500; /* Légère augmentation du poids de la police */
+}
+        
+        .btn-large {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary);
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
         }
         
         /* CTA Section */
@@ -729,6 +755,14 @@ img {
     .container {
         padding: 0 15px;
     }
+    
+    .custom-content h2 {
+        font-size: 2.2rem !important;
+    }
+    
+    .custom-cta h3 {
+        font-size: 1.8rem !important;
+    }
 }
     </style>
 </head>
@@ -745,7 +779,7 @@ img {
                     <li><a href="about.html">À propos</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="rdv.html" class="nav-btn">Prendre RDV</a></li>
+                    <li><a href="https://calendly.com/skysocialfr/demande-de-renseignements-clone" class="nav-btn">Prendre RDV</a></li>
                 </ul>
             </nav>
         </div>
@@ -786,7 +820,6 @@ img {
                         <li><i class="fas fa-check"></i> Photographie professionnelle</li>
                         <li><i class="fas fa-check"></i> Production vidéo (reels, tutos, témoignages)</li>
                         <li><i class="fas fa-check"></i> Motion design et animations</li>
-                        <li><i class="fas fa-check"></i> </li>
                         <li><i class="fas fa-check"></i> Templates personnalisés pour vos stories et publications</li>
                     </ul>
                 </div>
@@ -795,44 +828,43 @@ img {
                     <h3>Community Management</h3>
                     <p>Gestion au quotidien de vos communautés pour créer des relations authentiques avec votre audience.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Modération des commentaires et messages</li>
+                        <li><i class="fas fa-check"></i> Analyse des performances (rapport mensuel)</li>
                         <li><i class="fas fa-check"></i> Réponse personnalisée à votre audience</li>
-                        <li><i class="fas fa-check"></i> Animation de conversations</li>
+                        <li><i class="fas fa-check"></i> Planification éditoriale mensuelle</li>
                         <li><i class="fas fa-check"></i> Développement d'une communauté engagée</li>
                         <li><i class="fas fa-check"></i> Veille sectorielle</li>
                     </ul>
                 </div>
                 <div class="service-card fade-in">
                     <i class="fas fa-ad"></i>
-                    <h3>Publicités sur réseaux sociaux</h3>
-                    <p>Gestion de campagnes performantes pour maximiser votre retour sur investissement.</p>
+                    <h3>Campagne Publicitaire</h3>
+                  <p>Gestion de campagnes performantes pour maximiser votre retour sur investissement.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Analyse de la cible et définition des personas</li>
-                        <li><i class="fas fa-check"></i> Création de campagnes A/B testées</li>
-                        <li><i class="fas fa-check"></i> Optimisation des publicités en temps réel</li>
-                        <li><i class="fas fa-check"></i> Suivi du ROI et analyse des performances</li>
+                        <li><i class="fas fa-check"></i> Création des visuels et messages publicitaires</li>
+                        <li><i class="fas fa-check"></i> Suivi et optimisation continue des performances</li>
+                        <li><i class="fas fa-check"></i> Rapport de fin de campagne</li>
                     </ul>
                 </div>
                 <div class="service-card fade-in">
                     <i class="fas fa-chart-pie"></i>
-                    <h3>Analyse et reporting</h3>
-                    <p>Suivi précis des performances et recommandations d'optimisation basées sur les données.</p>
+                    <h3>Planning Média&nbsp;</h3>
+                    <p>Une stratégie bien pensée, c'est un planning maîtrisé ! Nous planifions vos prises de parole sur les bons canaux, au bon moment, pour maximiser votre visibilité et impact.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Tableaux de bord personnalisés</li>
-                        <li><i class="fas fa-check"></i> Analyses détaillées des performances</li>
-                        <li><i class="fas fa-check"></i> Recommandations stratégiques</li>
-                        <li><i class="fas fa-check"></i> Reporting régulier et transparent</li>
+                      <li><i class="fas fa-check"></i> Élaboration d'un planning de contenu mensuel ou trimestriel</li>
+                        <li><i class="fas fa-check"></i> Choix des canaux les plus pertinents selon vos objectifs</li>
+                        <li><i class="fas fa-check"></i> Intégration des temps forts marketing</li>
+                        <li><i class="fas fa-check"></i> Outils partagés pour suivre votre stratégie en temps réel</li>
                     </ul>
                 </div>
                 <div class="service-card fade-in">
                     <i class="fas fa-graduation-cap"></i>
-                    <h3>Formation et conseil</h3>
-                    <p>Pour une autonomie digitale de vos équipes et un développement durable de votre présence sociale.</p>
+                  <h3>Web Design &amp; Développement</h3>
+                  <p>En collaboration avec notre développeur, nous concevons des sites modernes, épurés et responsive, optimisés pour les conversions.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Formations personnalisées à vos équipes</li>
-                        <li><i class="fas fa-check"></i> Ateliers de création de contenu</li>
-                        <li><i class="fas fa-check"></i> Conseils stratégiques ponctuels</li>
-                        <li><i class="fas fa-check"></i> Audit one-shot de vos réseaux sociaux</li>
+                        <li><i class="fas fa-check"></i> Site vitrine professionnel, boutique en ligne, landing pages</li>
+                        <li><i class="fas fa-check"></i> Développement web (WordPress, HTML/CSS)</li>
+                        <li><i class="fas fa-check"></i> Intégration des outils (formulaires, paiement, réseaux sociaux)</li>
                     </ul>
                 </div>
             </div>
@@ -849,12 +881,12 @@ img {
             <div class="process-steps">
                 <div class="process-step fade-in">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Audit [&] Analyse</h3>
+                    <h3 class="step-title">Audit &amp; Analyse</h3>
                     <p class="step-description">Nous analysons votre présence actuelle et identifions les opportunités d'amélioration.</p>
                 </div>
                 <div class="process-step fade-in">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Stratégie [&] Planification</h3>
+                    <h3 class="step-title">Stratégie &amp; Planification</h3>
                     <p class="step-description">Nous développons une stratégie sur-mesure avec des objectifs clairs et un calendrier détaillé.</p>
                 </div>
                 <div class="process-step fade-in">
@@ -871,64 +903,37 @@ img {
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing">
+    <!-- Custom Solution Section -->
+    <section class="custom-solution">
         <div class="container">
-            <div class="section-title">
-                <h2>Nos Formules</h2>
-                <p>Des offres adaptées à chaque besoin et budget</p>
-            </div>
-            <div class="pricing-options">
-                <div class="pricing-card fade-in">
-                    <h3>Forfait Essentiel</h3>
-                    <div class="price">À partir de 490€<span>/mois</span></div>
-                    <p>Idéal pour les débutants ou les petites entreprises</p>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Gestion de 2 plateformes sociales</li>
-                        <li><i class="fas fa-check"></i> 5 posts par semaine par plateforme</li>
-                        <li><i class="fas fa-check"></i> Reporting mensuel</li>
-                        <li><i class="fas fa-check"></i> Community management basique</li>
-                    </ul>
-                    <a href="contact.html" class="btn">Choisir cette offre</a>
+            <div class="custom-content">
+                <h2>Une Solution Sur-Mesure Pour Votre Projet</h2>
+                <p>Nous ne croyons pas aux solutions standardisées. Chaque entreprise est unique, avec des objectifs, un public et des défis spécifiques. C'est pourquoi nous créons des stratégies entièrement personnalisées qui s'alignent parfaitement avec votre vision.</p>
+                
+                <div class="solution-features">
+                    <div class="feature-item fade-in">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Combinaison Flexible</h3>
+                        <p>Mélangez et associez nos services selon vos besoins spécifiques pour créer la formule parfaite.</p>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <i class="fas fa-sliders-h"></i>
+                        <h3>Évolutivité</h3>
+                        <p>Adaptons notre intervention à mesure que votre entreprise grandit et que vos besoins évoluent.</p>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Objectifs Personnalisés</h3>
+                        <p>Nous définissons ensemble des KPI précis qui reflètent vos ambitions réelles.</p>
+                    </div>
                 </div>
-                <div class="pricing-card popular fade-in">
-                    <h3>Forfait Pro</h3>
-                    <div class="price">À partir de 790€<span>/mois</span></div>
-                    <p>Notre offre la plus populaire pour les entreprises en croissance</p>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Gestion de 3 plateformes sociales</li>
-                        <li><i class="fas fa-check"></i> 8 posts par semaine par plateforme</li>
-                        <li><i class="fas fa-check"></i> Stories quotidiennes</li>
-                        <li><i class="fas fa-check"></i> Community management complet</li>
-                        <li><i class="fas fa-check"></i> Campagnes publicitaires simples</li>
-                        <li><i class="fas fa-check"></i> Reporting hebdomadaire</li>
-                    </ul>
-                    <a href="contact.html" class="btn">Choisir cette offre</a>
-                </div>
-                <div class="pricing-card fade-in">
-                    <h3>Forfait Enterprise</h3>
-                    <div class="price">Sur devis<span>personnalisé</span></div>
-                    <p>Solution sur-mesure pour les grandes entreprises et marques</p>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Gestion de 4+ plateformes sociales</li>
-                        <li><i class="fas fa-check"></i> Stratégie content avancée</li>
-                        <li><i class="fas fa-check"></i> Création de contenu premium</li>
-                        <li><i class="fas fa-check"></i> Campagnes publicitaires avancées</li>
-                        <li><i class="fas fa-check"></i> Community management 7j/7</li>
-                        <li><i class="fas fa-check"></i> Reporting détaillé et réunions stratégiques</li>
-                    </ul>
-                    <a href="contact.html" class="btn">Choisir cette offre</a>
+                
+                <div class="custom-cta fade-in">
+                    <h3>Discutons de Votre Projet</h3>
+                    <p>Prenez rendez-vous pour une consultation gratuite de 30 minutes. Nous analyserons vos besoins et vous proposerons une solution adaptée.</p>
+                    <a href="https://calendly.com/skysocialfr/demande-de-renseignements-clone" class="btn-large" target="_blank">Prendre RDV Gratuit</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container cta-content">
-            <h2>Prêt à transformer votre présence sociale ?</h2>
-            <p>Contactez-nous dès aujourd'hui pour une analyse gratuite de vos réseaux sociaux et une proposition sur-mesure.</p>
-            <a href="contact.html" class="btn">Nous contacter</a>
         </div>
     </section>
 
@@ -1002,7 +1007,7 @@ img {
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            if (window.scrollY > 50) {
+            if (window.scrollY > 100) {
                 header.style.padding = '10px 0';
                 header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             } else {
@@ -1010,16 +1015,6 @@ img {
                 header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             }
         });
-        
-        // Simple form validation
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if(newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Merci de vous être abonné à notre newsletter !');
-                this.reset();
-            });
-        }
     </script>
 </body>
 </html>
