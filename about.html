@@ -6,7 +6,50 @@
     <title>À Propos - Sky Social Agency</title>
     <link href="sm.jpeg">
     <link rel="stylesheet" href="IG_ BydvnielleJ.jpeg">
+	<!-- Optimisation des polices -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <style>
+		/* Optimisations globales */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Améliore le loading */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Boutons améliorés */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover:before {
+    left: 100%;
+}
         :root {
             --primary: #4a6cf7;
             --secondary: #ff6b00;
@@ -163,6 +206,61 @@
             margin-bottom: 80px;
         }
         
+		/* Styles pour les images about */
+.about-image-container {
+    position: relative;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+		/* Optimisation mobile des images */
+@media (max-width: 768px) {
+    .about-image-container {
+        height: 300px !important;
+        margin: 20px 0;
+    }
+    
+    .about-image-container img {
+        height: 100% !important;
+        object-fit: cover;
+    }
+    
+    .about-content {
+        gap: 30px;
+    }
+    
+    .about-text h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+.about-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2) !important;
+}
+
+.about-image-container img {
+    transition: transform 0.7s ease;
+}
+
+.about-image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Effet de superposition au survol */
+.about-image-container:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(74, 108, 247, 0.1), rgba(255, 107, 0, 0.1));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.about-image-container:hover:after {
+    opacity: 1;
+}
         .section-title h2 {
             font-size: 2.8rem;
             color: var(--dark);
@@ -700,49 +798,90 @@
             }
         }
         
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 5px 15px;
-            }
-            
-            .page-hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .page-hero p {
-                font-size: 1.2rem;
-            }
-            
-            .values-grid, .team-grid, .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .image-banner {
-                height: 250px;
-            }
-            
-            .banner-text h3 {
-                font-size: 1.8rem;
-            }
-            
-            .banner-text p {
-                font-size: 1rem;
-            }
-        }
+       @media (max-width: 768px) {
+    /* --- CORRECTION HEADER MOBILE --- */
+    header {
+        position: relative !important;
+        padding: 10px 0 !important;
+    }
+    
+    .header-container {
+        flex-direction: column;
+        padding: 10px 0 !important;
+    }
+    
+    /* Ajuste l'espacement du hero */
+    .page-hero {
+        padding: 120px 0 80px !important;
+    }
+    
+    /* Navigation mobile améliorée */
+    nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 !important;
+    }
+    
+    /* --- TES STYLES EXISTANTS À GARDER --- */
+    .about-image-container {
+        height: 300px !important;
+        margin-top: 30px;
+    }
+    
+    .about-content:nth-child(even) .about-image-container {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    
+    .page-hero h1 {
+        font-size: 2.2rem !important; /* réduit de 2.8rem */
+        line-height: 1.2;
+    }
+    
+    .page-hero p {
+        font-size: 1.1rem !important; /* réduit de 1.2rem */
+    }
+    
+    .values-grid, .team-grid, .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem !important; /* réduit de 2.2rem */
+    }
+    
+    .image-banner {
+        height: 250px;
+    }
+    
+    .banner-text h3 {
+        font-size: 1.5rem !important; /* réduit de 1.8rem */
+    }
+    
+    .banner-text p {
+        font-size: 0.9rem !important; /* réduit de 1rem */
+    }
+    
+    /* --- AMÉLIORATIONS SUPPLEMENTAIRES --- */
+    .team-member {
+        padding: 20px 15px;
+    }
+    
+    .value-card, .service-card {
+        padding: 25px 20px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
     </style>
 </head>
 <body>
@@ -792,28 +931,35 @@
                 </div>
             </div>
             
-            <div class="about-content">
-              <div class="about-text">
-                <h3>Notre parcours</h3>
-                    <p>Fondée en 2024, Sky Social Agency est née d'un constat simple : nombreuses sont les entreprises qui peinent à tirer profit du potentiel des réseaux sociaux par manque de temps, d'expertise ou de ressources.</p>
-                    <p>Notre mission est simple : offrir à chaque marque une présence sociale authentique et impactante qui génère des résultats concrets.</p>
-                  <p>Aujourd'hui, nous accompagnons plus de 50 clients dans divers secteurs d'activité, de la protésiste ongulaire&nbsp; &nbsp;à la startup innovante.&nbsp; &nbsp;</p>
-                </div>
-                <div class="about-image">
-                    <div class="about-image-placeholder"></div>
-                </div>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="about-image-placeholder"></div>
-                </div>
-                <div class="about-text">
-                    <h3>Notre vision</h3>
-                    <p>Chez Sky Social Agency, nous croyons que chaque marque mérite une présence sociale qui reflète ses valeurs et engage sa communauté de manière authentique.</p>
-                    <p>Nous visons à démocratiser l'accès à des stratégies sociales performantes, en mettant notre expertise au service de votre croissance.</p>
-                    <p>Notre approche combine créativité, stratégie et analyse data pour vous offrir des résultats mesurables et un retour sur investissement concret.</p>
-                </div>
-            </div>
+       <!-- Notre parcours -->
+<div class="about-content">
+    <div class="about-text">
+        <h3>Notre parcours</h3>
+        <p>Fondée en 2024, Sky Social Agency est née d'un constat simple : nombreuses sont les entreprises qui peinent à tirer profit du potentiel des réseaux sociaux par manque de temps, d'expertise ou de ressources.</p>
+        <p>Notre mission est simple : offrir à chaque marque une présence sociale authentique et impactante qui génère des résultats concrets.</p>
+        <p>Aujourd'hui, nous accompagnons plus de 50 clients dans divers secteurs d'activité, de la protésiste ongulaire à la startup innovante.</p>
+    </div>
+    <div class="about-image">
+        <div class="about-image-container" style="border-radius: 15px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.15); height: 400px;">
+            <img src="teamsupport.jpeg" alt="Notre équipe et support client" style="width:100%; height:100%; object-fit: cover;">
+        </div>
+    </div>
+</div>
+
+<!-- Notre vision -->
+<div class="about-content">
+    <div class="about-image">
+        <div class="about-image-container" style="border-radius: 15px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.15); height: 400px;">
+            <img src="ourvision.jpeg" alt="Notre vision stratégique" style="width:100%; height:100%; object-fit: cover;">
+        </div>
+    </div>
+    <div class="about-text">
+        <h3>Notre vision</h3>
+        <p>Chez Sky Social Agency, nous croyons que chaque marque mérite une présence sociale qui reflète ses valeurs et engage sa communauté de manière authentique.</p>
+        <p>Nous visons à démocratiser l'accès à des stratégies sociales performantes, en mettant notre expertise au service de votre croissance.</p>
+        <p>Notre approche combine créativité, stratégie et analyse data pour vous offrir des résultats mesurables et un retour sur investissement concret.</p>
+    </div>
+</div>
         </div>
     </section>
 
@@ -864,11 +1010,14 @@
                 <h3>Meryne Ndjeyi</h3>
                 <div class="role">CEO & Directrice Artistique</div>
                 <p>Créative et passionnée par la communication digitale, je suis spécialisée en stratégie réseaux sociaux, campagnes publicitaires et web design. Avec une vision claire et un vrai sens du détail, j'aide les marques à construire une présence en ligne cohérente, percutante et alignée avec leurs valeurs.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/meryne.eis/"><i class="fab fa-instagram"></i></a>
-                    <a href="www.linkedin.com/in/meryne-ndjeyi-bb5169198"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
+                 <div class="social-links">
+        <a href="https://www.instagram.com/meryne.eis/" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/meryne-ndjeyi-bb5169198" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
             </div>
             
             <div class="team-member fade-in">
@@ -879,10 +1028,13 @@
                 <div class="role">Développeur Website</div>
                 <p>Spécialisé en création de sites performants et modernes, j'accompagne Sky Social dans la réalisation des sites web clients. En binôme avec Meryne (web design), je développe des plateformes esthétiques, ergonomiques et optimisées.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
+        <a href="https://www.linkedin.com/in/giovanni-affogbolo-6a0919124/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.giovanniaffogbolo.com/" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
             </div>
             
             <div class="team-member fade-in">
@@ -893,10 +1045,10 @@
                 <div class="role">Community manager</div>
                 <p>Experte en contenu visuel et storytelling, je donne vie à votre univers de marque à travers des visuels authentiques, modernes et pensés pour engager. Je m'occupe de la gestion visuelle de vos réseaux et de la production de contenu adapté à votre audience.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
+        <a href="https://www.linkedin.com/in/dounia-cha%C3%AFr-21b3a31a0/?originalSubdomain=fr" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>     
+    </div>
             </div>
         </div>
     </div>

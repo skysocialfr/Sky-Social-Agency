@@ -6,7 +6,50 @@
     <title>Nos Services - Sky Social Agency</title>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wdth,wght@75,200;75,300;75,400;75,500;75,600;75,700;75,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<!-- Optimisation des polices -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <style>
+		/* Optimisations globales */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Améliore le loading */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Boutons améliorés */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover:before {
+    left: 100%;
+}
         :root {
             --primary: #4a6cf7;
             --secondary: #ff6b00;
@@ -603,41 +646,90 @@
             }
         }
         
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 5px 15px;
-            }
-            
-            .page-hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .page-hero p {
-                font-size: 1.2rem;
-            }
-            
-            .services-grid, .pricing-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-card.popular {
-                transform: scale(1);
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-        }
+       @media (max-width: 768px) {
+    /* --- CORRECTION HEADER MOBILE --- */
+    header {
+        position: relative !important;
+        padding: 10px 0 !important;
+    }
+    
+    .header-container {
+        flex-direction: column;
+        padding: 10px 0 !important;
+    }
+    
+    /* Ajuste l'espacement du hero */
+    .page-hero {
+        padding: 120px 0 80px !important;
+    }
+    
+    /* Navigation mobile améliorée */
+    nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 !important;
+    }
+    
+    /* --- TES STYLES EXISTANTS À GARDER --- */
+    .about-image-container {
+        height: 300px !important;
+        margin-top: 30px;
+    }
+    
+    .about-content:nth-child(even) .about-image-container {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    
+    .page-hero h1 {
+        font-size: 2.2rem !important; /* réduit de 2.8rem */
+        line-height: 1.2;
+    }
+    
+    .page-hero p {
+        font-size: 1.1rem !important; /* réduit de 1.2rem */
+    }
+    
+    .values-grid, .team-grid, .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem !important; /* réduit de 2.2rem */
+    }
+    
+    .image-banner {
+        height: 250px;
+    }
+    
+    .banner-text h3 {
+        font-size: 1.5rem !important; /* réduit de 1.8rem */
+    }
+    
+    .banner-text p {
+        font-size: 0.9rem !important; /* réduit de 1rem */
+    }
+    
+    /* --- AMÉLIORATIONS SUPPLEMENTAIRES --- */
+    .team-member {
+        padding: 20px 15px;
+    }
+    
+    .value-card, .service-card {
+        padding: 25px 20px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
     </style>
 </head>
 <body>
@@ -677,13 +769,13 @@
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <i class="fas fa-chart-line"></i>
-                    <h3>Stratégie de médias sociaux</h3>
+                    <h3>Stratégie Digital &amp; Branding</h3>
                     <p>Développement d'une feuille de route complète pour maximiser votre présence sociale et atteindre vos objectifs business.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Audit complet de votre présence actuelle</li>
                         <li><i class="fas fa-check"></i> Définition d'objectifs SMART et d'une ligne éditoriale</li>
                         <li><i class="fas fa-check"></i> Planification détaillée du contenu et calendrier éditorial</li>
-                        <li><i class="fas fa-check"></i> Mise en œuvre et optimisation continue</li>
+                        <li><i class="fas fa-check"></i> Accompagnement mensuel ou one-shot</li>
                     </ul>
                 </div>
                 <div class="service-card fade-in">
@@ -694,8 +786,8 @@
                         <li><i class="fas fa-check"></i> Photographie professionnelle</li>
                         <li><i class="fas fa-check"></i> Production vidéo (reels, tutos, témoignages)</li>
                         <li><i class="fas fa-check"></i> Motion design et animations</li>
-                        <li><i class="fas fa-check"></i> Design graphique pour posts et stories</li>
-                        <li><i class="fas fa-check"></i> Création de maquettes pour campagnes</li>
+                        <li><i class="fas fa-check"></i> </li>
+                        <li><i class="fas fa-check"></i> Templates personnalisés pour vos stories et publications</li>
                     </ul>
                 </div>
                 <div class="service-card fade-in">
